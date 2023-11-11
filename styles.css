@@ -36,7 +36,7 @@ body {
     height: 50px;
     text-align: center;
     padding: 10px 0;
-    background-color: var(--dblue);
+    background-color: #FFA33C;
     font-family: 'Black Ops One';
 
     letter-spacing: 2px;
@@ -121,7 +121,7 @@ img {
 }
 
 .mark{
-    background-color: var(--dark);
+    background-color: #FFA33C;
 }
 
 .mark a{
