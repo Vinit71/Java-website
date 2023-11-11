@@ -135,11 +135,15 @@ img {
 }
 
 
-/* @media(max-width: 480px){
+.code{
+    background-color: black;
+    border-radius: 5%;
+}
 
-
-} */
-
+.code p{
+    padding: 2%;
+    color: white;
+}
 
 @media screen and (max-width:525px)
 {
