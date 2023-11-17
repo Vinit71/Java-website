@@ -9,6 +9,12 @@ body {
     font-family: Arial, sans-serif;
     /* background:pink; */
 }
+
+pre{
+    background-color: rgb(51, 49, 49);
+    color: white;
+    font-weight: 100;
+}
 :root
 {
     --dblue:#363062;
@@ -96,6 +102,7 @@ img {
     height: 100%;
     padding-top: 20px;
     background-color: var(--black);
+    overflow: scroll;
 }
 
 .sidebar ul{
