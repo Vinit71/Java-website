@@ -38,7 +38,7 @@ pre{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     height: 50px;
     text-align: center;
     padding: 10px 0;
@@ -46,9 +46,12 @@ pre{
     font-family: 'Black Ops One';
 
     letter-spacing: 2px;
-    color: var(--white);
+    
 }
 
+.header h2{
+    color: var(--white);
+}
 
 .container
 {
@@ -94,7 +97,7 @@ img {
 /* ==========nav============= */
 .sidebar {
     position: fixed;
-    margin-top:4rem;
+    margin-top:1.5rem;
     width: 15%;
     grid-column: 1/2;
     grid-row:2/3;
@@ -112,12 +115,12 @@ img {
 .sidebar ul li {
     list-style: none;
     display: block;
-    margin-left: -2.2rem;
+    margin-left: -2.5rem;
 }
 
 .sidebar ul li a{
     display: block;
-    padding: 1rem 1rem 1rem 2.5rem;
+    padding: 1.7rem 1rem 2.5rem 0.8rem;
     text-decoration: none;
     color: black;
 }
@@ -128,7 +131,7 @@ img {
 }
 
 .mark{
-    background-color: #FFA33C;
+    background-color: #ff8800;
 }
 
 .mark a{

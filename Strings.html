@@ -1,0 +1,1649 @@
+<html>
+    <head>
+
+        <title>Strings</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+
+    <div class="header">
+        <h2>Java Programs</h2>
+        <h6></h6>
+    </div>
+    <!-- ================Nav Bar==================== -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">2D Arrays <b>12</b></a></li>
+            <li><a href="Applets.html">Applets <b>15</b></a></li>
+            <li><a href="BPC.html">Basic Programming Constructs <b>50</b></a></li>
+            <li><a href="Data_conversion.html">Data Conversion <b>25</b></a></li>
+            <li><a href="Delegation_Event_Model.html">Delegation Event Model <b>12</b></a></li>
+            <li><a href="Exception_handling.html">Exception Handling <b>13</b></a></li>
+            <li><a href="Functions.html">Functions <b>12</b></a></li>
+            <li><a href="AWT.html">AWT <b>16</b></a></li>
+            <li><a href="Inheritance.html">Inheritance <b>23</b></a></li>
+            <li><a href="input_output.html">Input/Output <b>10</b></a></li>
+            <li><a href="Interfaces.html">Interfaces <b>11</b></a></li>
+            <li><a href="jdbc.html">Jdbc <b>9</b></a></li>
+            <li><a href="Multithreading.html">Multithreading <b>8</b></a></li>
+            <li><a href="OOPS.html">OOPS <b>22</b></a></li>
+            <li><a href="Packages.html">Packages <b>4</b></a></li>
+            <li><a href="SingleD_Array.html">Single Dimension Arrays <b>23</b></a></li>
+            <li class="mark"><a href="Strings.html">Strings <b>50</b></a></li>
+        </ul>
+    </div>
+
+
+    <!-- ==============Main============== -->
+    <div class="container">
+
+        <div class="program">
+            <h2>Program 1: Program to Check if a String contains only digits?</h2>
+            
+            <pre>
+                // Java program for the above approach 
+// contains only digits 
+class string1 { 
+
+	// Function to check if a string 
+	// contains only digits 
+	public static boolean
+	onlyDigits(String str, int n) 
+	{ 
+		// Traverse the string from 
+		// start to end 
+		for (int i = 0; i < n; i++) { 
+
+			// Check if character is 
+			// not a digit between 0-9 
+			// then return false
+			if (str.charAt(i) < '0'
+				|| str.charAt(i) > '9') { 
+				return false; 
+			} 
+		} 
+		// If we reach here, that means 
+		// all characters were digits.
+		return true; 
+	} 
+
+	// Driver Code 
+	public static void main(String args[]) 
+	{ 
+		// Given string str 
+		String str = "1a234"; 
+		int len = str.length(); 
+
+		// Function Call 
+		System.out.println(onlyDigits(str, len)); 
+	} 
+}
+
+              </pre>
+
+            <h2>Output:</h2>
+            <img src="strings_output/7017String1.png" alt="">
+
+            </div>
+
+        <div class="program">
+            <h2>Program 2: Program to perform Deep Copy for String?</h2>
+
+            <pre>
+                class String2 
+{  
+// instance variable of the class ABC  
+int x = 30;  
+}  
+class DeepCopyExample   
+{     
+// main method  
+public static void main(String argvs[])   
+{  
+// creating an object of the class ABC  
+
+
+String2 obj1 = new String2();  
+  
+// it will copy the reference, not value  
+String2 obj2 = new String2();  
+  
+// updating the value to 6   
+// using the reference variable obj2  
+obj2.x = 6;  
+  
+// printing the value of x using reference variable obj1   
+System.out.println("The value of x is: " + obj1.x);  
+}  
+
+}
+            </pre>
+           
+            <h2>Output:</h2>
+            <img src="strings_output/7017string2.png" alt="output">
+        </div>
+
+        <div class="program">
+            <h2>Program 3: Program to prove String is immutable programmatically?</h2>
+
+            <pre>
+                class E {  
+                    public static void check(Object x, Object y) {  
+                        if (x == y) {  
+                            System.out.println("Both pointing to the same reference");  
+                        } 
+                        else {  
+                            System.out.println("Both are pointing to different reference");  
+                        }  
+                    }  
+                    public static void main(String[] args) {  
+                        String x = "hello";  
+                        String y = "hello";  
+                        System.out.println("Before Modification");  
+                        check(x, y);  
+                        System.out.println("--------------------");
+                        x += "world";  
+                        System.out.println("After Modification");  
+                        check(x, y);  
+                    }  
+                }   
+            </pre>
+
+            <h2>Output:</h2>
+            <img src="strings_output/7105_Strings_3.png" alt="output">
+        </div>
+
+        <div class="program">
+            <h2>Program 4: Program to remove all occurrences of a given character from input String?</h2>
+
+            <pre>
+                import java.util.Scanner;
+
+class RemoveCharacter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+        
+        System.out.print("Enter the character to remove: ");
+        char charToRemove = scanner.next().charAt(0);
+        
+        String result = removeCharacter(inputString, charToRemove);
+        System.out.println("Result: " + result);
+        
+        scanner.close();
+    }
+    
+    public static String removeCharacter(String inputString, char charToRemove) {
+        StringBuilder stringBuilder = new StringBuilder();
+        
+        for (int i = 0; i < inputString.length(); i++) {
+            char currentChar = inputString.charAt(i);
+            
+            if (currentChar != charToRemove) {
+                stringBuilder.append(currentChar);
+            }
+        }
+        
+        return stringBuilder.toString();
+    }
+}
+
+            </pre>
+
+            <h2>Output:</h2>
+            <img src="strings_output/7023Strings4.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 5: Program to append the string using StringBuffer class</h2>
+
+            <pre>
+                import java.lang.*; 
+class s { 
+
+	public static void main(String[] args) 
+	{ 
+
+		StringBuffer s1 = new StringBuffer("Yaman "); 
+		System.out.println("Input: " + s1); 
+
+		s1.append(true); 
+		System.out.println("Output: " + s1); 
+
+		System.out.println(); 
+
+		StringBuffer s2 = new StringBuffer("Sahota"); 
+		System.out.println("Input: " + s2); 
+
+		s2.append(false); 
+		System.out.println("Output: " + s2); 
+	} 
+} 
+
+            </pre>
+
+            <h2>Output:</h2>
+            <img src="strings_output/7038String5.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 6: Program to insert the string using StringBuffer class</h2>
+
+            <pre>
+                class Insert {
+                    public static void main(String[] args) {
+                        // Create a StringBuffer
+                        StringBuffer stringBuffer = new StringBuffer("Hello World!");
+                
+                        // Insert a string at a specific position
+                        stringBuffer.insert(6, "Java ");
+                
+                        // Print the modified string
+                        System.out.println("Modified String: " + stringBuffer.toString());
+                    }
+                }
+                
+            </pre>
+
+            <h2>Output:</h2>
+            <img src="strings_output/7073_string6.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 7: Program to Add Characters to a String</h2>
+
+            <pre>
+                class Add{
+                    public static void main(String[] args) {
+                        // Using concat method
+                        String originalString = "Hello";
+                        String newString1 = originalString.concat(" World!");
+                
+                        // Using + operator
+                        String newString2 = originalString + " Java!";
+                
+                        // Print the modified strings
+                        System.out.println("Original String: " + originalString);
+                        System.out.println("Modified String 1: " + newString1);
+                        System.out.println("Modified String 2: " + newString2);
+                    }
+                }
+                
+            </pre>
+
+            <h2>Output:</h2>
+            <img src="strings_output/7073_string7.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 8: Program to Add Characters to a String</h2>
+
+            <pre>
+                // Program to Add Characters to a String
+
+class AddCharactersToString {
+    public static void main(String[] args) {
+        // Create a StringBuilder
+        StringBuffer s = new StringBuffer("Hello, ");
+
+        // Add characters to the string
+        s.append("World");
+
+        // Print the final string
+        System.out.println(s.toString()); // Output: "Hello, World!"
+    }
+}
+
+            </pre>
+
+            <h2>Output:</h2>
+            <img src="strings_output/7055string8.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 9: Program to Check Anagram</h2>
+
+            <pre>
+                import java.util.Arrays;
+ class AnagramChecker {
+
+    public static boolean areAnagrams(String str1, String str2) {
+        
+        str1 = str1.replaceAll("\\s", "").toLowerCase();
+        str2 = str2.replaceAll("\\s", "").toLowerCase();
+
+        
+        if (str1.length() != str2.length()) {
+            return false;
+        }
+
+        
+        char[] charArray1 = str1.toCharArray();
+        char[] charArray2 = str2.toCharArray();
+
+        Arrays.sort(charArray1);
+        Arrays.sort(charArray2);
+
+        
+        return Arrays.equals(charArray1, charArray2);
+    }
+
+    public static void main(String[] args) {
+        String str1 = "Listen";
+        String str2 = "Silent";
+
+        if (areAnagrams(str1, str2)) {
+            System.out.println(str1 + " and " + str2 + " are anagrams.");
+        } else {
+            System.out.println(str1 + " and " + str2 + " are not anagrams.");
+        }
+    }
+}
+
+            </pre>
+
+            <h2>Output:</h2>
+            <img src="strings_output/7025string9.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 10: Program to check whether a string is a Palindrome</h2>
+
+            <pre>
+                class PalindromeString10
+                {    
+                    public static void main(String[] args) {    
+                        String string = "Kayak";    
+                        boolean flag = true;    
+                            
+                        //Converts the given string into lowercase    
+                        string = string.toLowerCase();    
+                            
+                        //Iterate the string forward and backward, compare one character at a time     
+                        //till middle of the string is reached    
+                        for(int i = 0; i < string.length()/2; i++){    
+                            if(string.charAt(i) != string.charAt(string.length()-i-1)){    
+                                flag = false;    
+                                break;    
+                            }    
+                        }    
+                        if(flag)    
+                            System.out.println("Given string is palindrome");    
+                        else    
+                            System.out.println("Given string is not a palindrome");    
+                    }    
+                }
+            </pre>
+
+            <h2>Output:</h2>
+            <img src="strings_output/7017String10.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 11: Program to Convert Enum to String</h2>
+
+            <pre>
+                import java.io.*; 
+
+  
+// Enum 
+
+enum Fruits { 
+
+    Orange, 
+
+    Apple, 
+
+    Banana, 
+
+    Mango; 
+} 
+
+  
+// Main class 
+
+class GFG { 
+
+  
+
+    // Main driver method 
+
+    public static void main(String[] args) { 
+
+  
+
+        // Printing all the values 
+
+        System.out.println(Fruits.Orange.name()); 
+
+        System.out.println(Fruits.Apple.name()); 
+
+        System.out.println(Fruits.Banana.name()); 
+
+        System.out.println(Fruits.Mango.name()); 
+
+    } 
+}
+            </pre>
+
+            <h2>Output:</h2>
+            <img src="strings_output/7017String11.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 12: Program to Convert String to String Array</h2>
+
+            <pre>
+                // Program to Convert String to String Array
+class StringToArray {
+    public static void main(String[] args) {
+        String inputString = "Hello, World! This is a sample string.";
+        String[] stringArray = inputString.split(" ");
+        
+        for (String word : stringArray) {
+            System.out.println(word);
+        }
+    }
+}
+
+            </pre>
+
+            <h2>Output:</h2>
+            <img src="strings_output/7055string12.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 13: Program to count number of words in a String?</h2>
+
+            <pre>
+                class Count{
+                    public static void main(String[] args) {
+                        // Example string
+                        String inputString = "This is a sample string";
+                
+                        // Count the number of words
+                        int wordCount = countWords(inputString);
+                
+                        // Print the result
+                        System.out.println("Number of words in the string: " + wordCount);
+                    }
+                
+                    // Function to count words in a string
+                    private static int countWords(String str) {
+                        // Check for null or empty string
+                        if (str == null || str.isEmpty()) {
+                            return 0;
+                        }
+                
+                        // Split the string into an array of words
+                        String[] words = str.split("\\s+");
+                
+                        // Return the number of words
+                        return words.length;
+                    }
+                }
+                
+            </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7073_string13.png" alt="output">
+        </div>
+
+        <div class="program">
+            <h2>Program 14: Program to count the total number of characters in a string</h2>
+
+            <pre>import java.lang.*;
+                class C {    
+                    public static void main(String[] args) {    
+                        String x = "Hello World";    
+                        int count = 0;     
+                        for(int i = 0; i < x.length(); i++) {    
+                            if(x.charAt(i) != ' ')    
+                                count++;    
+                        }        
+                        System.out.println("No. of characters = " + count);    
+                    }    
+                }     </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7105_Strings_14.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 15: Program to count the total number of punctuation characters exists in a String</h2>
+
+            <pre>//Program to count the total number of punctuation characters exists in a String
+
+                class PunctuationCount {
+                    public static void main(String[] args) {
+                        // Sample string
+                        String inputString = "Hello, world! This is a sample string.";
+                
+                        // Count the total number of punctuation characters
+                        int punctuationCount = countPunctuation(inputString);
+                
+                        // Display the result
+                        System.out.println("Total number of punctuation characters: " + punctuationCount);
+                    }
+                
+                    // Function to count the total number of punctuation characters in a string
+                    static int countPunctuation(String str) {
+                        int count = 0;
+                
+                        for (int i = 0; i < str.length(); i++) {
+                            char ch = str.charAt(i);
+                
+                            // Check if the character is a punctuation character
+                            if (isPunctuation(ch)) {
+                                count++;
+                            }
+                        }
+                
+                        return count;
+                    }
+                
+                    // Function to check if a character is a punctuation character
+                    static boolean isPunctuation(char ch) {
+                        return !Character.isLetterOrDigit(ch) && !Character.isWhitespace(ch);
+                    }
+                }
+                </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7107strings15.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 16: Program to count the total number of vowels and consonants in a string</h2>
+
+            <pre>class CountCheck {    
+                public static void main(String[] args) {    
+                        
+                    
+                    int vCount = 0, cCount = 0;    
+                        
+                   
+                    String str = "This is a really simple sentence";    
+                        
+                  
+                    str = str.toLowerCase();    
+                        
+                    for(int i = 0; i < str.length(); i++) {    
+                     
+                        if(str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u') {    
+                    
+                            vCount++;    
+                        }    
+                       
+                        else if(str.charAt(i) >= 'a' && str.charAt(i)<='z') {      
+                        
+                            cCount++;    
+                        }    
+                    }    
+                    System.out.println("Number of vowels: " + vCount);    
+                    System.out.println("Number of consonants: " + cCount);    
+                }    
+            }   </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7057_String16.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 17: Program to determine whether a given string is palindrome</h2>
+
+            <pre>class Strings_17   
+                {    
+                    public static void main(String[] args) {    
+                        String string = "Kayak";    
+                        boolean flag = true;    
+                            
+                        //Converts the given string into lowercase    
+                        string = string.toLowerCase();    
+                            
+                        //Iterate the string forward and backward, compare one character at a time     
+                        //till middle of the string is reached    
+                        for(int i = 0; i < string.length()/2; i++){    
+                            if(string.charAt(i) != string.charAt(string.length()-i-1)){    
+                                flag = false;    
+                                break;    
+                            }    
+                        }    
+                        if(flag)    
+                            System.out.println("Given string is palindrome");    
+                        else    
+                            System.out.println("Given string is not a palindrome");    
+                    }    
+                }</pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7095_21_Strings_17.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 18: Program to determine whether one string is a rotation of another</h2>
+
+            <pre>class Strings_18 {  
+                public static boolean checkRotation(String st1, String st2) {  
+                    if (st1.length() != st2.length()) {  
+                        return false;  
+                    }  
+                    String st3 = st1 + st1;  
+                    if (st3.contains(st2))  
+                        return true;  
+                    else  
+                        return false;  
+                }  
+               
+                public static void main(String[] args) {  
+                    String str1 = "avajava";  
+                    String str2 = "javaava";  
+                    System.out.println("Checking if a string is rotation of another");  
+                    if (checkRotation(str1, str2)) {  
+                        System.out.println("Yes " + str2 + " is rotation of " + str1);  
+                    } else {  
+                        System.out.println("No " + str2 + " is not rotation of " + str1);  
+                    }  
+                }  
+            }</pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7095_21_Strings_18.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 19: Program to divide a string in 'N' equal parts.</h2>
+
+            <pre>import java.util.Scanner;
+
+                public class StringDivider {
+                    public static void main(String[] args) {
+                        Scanner scanner = new Scanner(System.in);
+                
+                        System.out.print("Enter a string: ");
+                        String inputString = scanner.nextLine();
+                
+                        System.out.print("Enter the number of parts (N): ");
+                        int numberOfParts = scanner.nextInt();
+                
+                        if (numberOfParts > 0) {
+                            divideString(inputString, numberOfParts);
+                        } else {
+                            System.out.println("Please enter a valid number of parts (N > 0).");
+                        }
+                
+                        scanner.close();
+                    }
+                
+                    private static void divideString(String inputString, int numberOfParts) {
+                        int length = inputString.length();
+                        int partLength = length / numberOfParts;
+                
+                        System.out.println("Dividing the string into " + numberOfParts + " equal parts:");
+                
+                        for (int i = 0; i < numberOfParts; i++) {
+                            int startIndex = i * partLength;
+                            int endIndex = (i == numberOfParts - 1) ? length : (i + 1) * partLength;
+                
+                            String part = inputString.substring(startIndex, endIndex);
+                            System.out.println("Part " + (i + 1) + ": " + part);
+                        }
+                    }
+                }</pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7025strings19.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 20: Program to find all subsets of a string</h2>
+
+            <pre>
+                class SubsetToString
+                {
+                  static void subString(String str, int n) 
+                  {
+                    for (int i = 0; i < n; i++) //starting index
+                    {
+                      for (int j = i + 1; j <= n; j++) //ending index
+                      {
+                        System.out.println(str.substring(i, j));
+                      }
+                    }
+                  }
+                  public static void main(String[] args) 
+                  {
+                    System.out.println("\nProgram Find all the Subset of a string.\n");
+                    java.util.Scanner sc = new java.util.Scanner(System.in);
+                    System.out.print("Enter a String :  ");
+                    String str = sc.nextLine();
+                    System.out.println("\nOrginal String is :  " + str);
+                    System.out.println("subsets of a given string are :  ");
+                    SubsetToString s = new SubsetToString();
+                    s.subString(str, str.length());
+                  }
+                }
+                </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7072Strings20.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 21: Program to find all the permutations of a string</h2>
+
+            <pre>//Program to find all the permutations of a string
+                class StringPermutations {
+                    public static void main(String[] args) {
+                        String inputString = "four";
+                        findPermutations(inputString, "");
+                    }
+                
+                    public static void findPermutations(String input, String current) {
+                        int length = input.length();
+                
+                        // If the input string is empty, we've formed a permutation
+                        if (length == 0) {
+                            System.out.println(current);
+                        } else {
+                            for (int i = 0; i < length; i++) {
+                                char currentChar = input.charAt(i);
+                                String remaining = input.substring(0, i) + input.substring(i + 1);
+                                findPermutations(remaining, current + currentChar);
+                            }
+                        }
+                    }
+                }
+                </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7055string21.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 22: Program to find maximum and minimum occurring character in a string</h2>
+
+            <pre>class CharacterFinder {
+                public static void main(String[] args) {
+                    String input = "Hello World";
+                    char maxChar = findMaxCharacter(input);
+                    char minChar = findMinCharacter(input);
+                    
+                    System.out.println("Maximum character: " + maxChar);
+                    System.out.println("Minimum character: " + minChar);
+                }
+                
+                public static char findMaxCharacter(String input) {
+                    char maxChar = input.charAt(0);
+                    
+                    for (int i = 1; i < input.length(); i++) {
+                        if (input.charAt(i) > maxChar) {
+                            maxChar = input.charAt(i);
+                        }
+                    }
+                    
+                    return maxChar;
+                }
+                
+                public static char findMinCharacter(String input) {
+                    char minChar = input.charAt(0);
+                    
+                    for (int i = 1; i < input.length(); i++) {
+                        if (input.charAt(i) < minChar) {
+                            minChar = input.charAt(i);
+                        }
+                    }
+                    
+                    return minChar;
+                }
+            }</pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7040Strings22.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 23:  Program to find Reverse of the string</h2>
+
+            <pre>/* Program to find Reverse of the string */
+
+                public class strings23_7024 {
+                    public static String reverseString(String input) {
+                        StringBuilder reversed = new StringBuilder();
+                
+                        for (int i = input.length() - 1; i >= 0; i--) {
+                            reversed.append(input.charAt(i));
+                        }
+                
+                        return reversed.toString();
+                    }
+                
+                    public static void main(String[] args) {
+                        String inputString = "Java Programs";
+                        String reversedString = reverseString(inputString);
+                        System.out.println(reversedString);
+                    }
+                }</pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/strings23_7024.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 24: Program to find the duplicate characters in a string</h2>
+
+            <pre>class Strings_24{
+                public static void main(String args[]) {
+                 
+                    String inputStr ="teeter";
+            
+                    for(char i :inputStr.toCharArray()){
+                    if ( inputStr.indexOf(i) == inputStr.lastIndexOf(i)) {
+                        System.out.println("First non-repeating character is: "+i);
+                        break;
+                    }
+                    }
+                }
+            }</pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7095_21_Strings_24.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 25: Program to find the duplicate words in a string</h2>
+
+            <pre>// Program to find the duplicate words in a string
+                class FindDuplicateWords {
+                    public static void main(String[] args) {
+                        String inputString = "This is a sample string and this is a sample example.";
+                        String[] words = inputString.split(" ");
+                        int[] wordCount = new int[words.length];
+                
+                        for (int i = 0; i < words.length; i++) {
+                            words[i] = words[i].toLowerCase().replaceAll("[^a-zA-Z]", "");
+                            if (!words[i].isEmpty()) {
+                                for (int j = i + 1; j < words.length; j++) {
+                                    if (words[i].equals(words[j])) {
+                                        wordCount[i]++;
+                                    }
+                                }
+                            }
+                        }
+                
+                        // Print duplicate words
+                        for (int i = 0; i < words.length; i++) {
+                            if (wordCount[i] > 0) {
+                                System.out.println("Word: " + words[i] + ", Count: " + (wordCount[i] + 1));
+                                wordCount[i] = 0; // Reset the count to avoid duplicate output
+                            }
+                        }
+                    }
+                }
+                </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7055string25.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 26: Program to find the frequency of characters</h2>
+
+            <pre>import java.util.Scanner;
+                class spro4
+                {
+                    public static void main(String st[])
+                    {
+                    String str="hello world";
+                    int count=0;
+                    System.out.println("String is :"+str);
+                    System.out.print("Enter a character to find its frequency: ");
+                    Scanner sc= new Scanner(System.in);
+                    char c = sc.next().charAt(0);
+                
+                    for(int i=0; i<str.length();i++)
+                    {
+                        if(c== str.charAt(i))
+                          {
+                            count++;
+                          }
+                    }
+                    System.out.print("Frequency of "+c+" in the string is: "+ count);
+                    }
+                }
+            </pre></pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7062Strings26.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 27: Program to find the largest and smallest word in a string</h2>
+
+            <pre>import java.util.Scanner;
+
+                class WordLength {
+                    public static void main(String[] args) {
+                        Scanner scanner = new Scanner(System.in);
+                
+                        
+                        System.out.print("Enter a string: ");
+                        String inputString = scanner.nextLine();
+                
+                       
+                        String[] words = inputString.split("\\s+");
+                        String smallestWord = words[0];
+                        String largestWord = words[0];
+                
+                        for (int i = 1; i < words.length; i++) {
+                            if (words[i].length() < smallestWord.length()) {
+                                smallestWord = words[i];
+                            }
+                            if (words[i].length() > largestWord.length()) {
+                                largestWord = words[i];
+                            }
+                        }
+                
+                        System.out.println("Smallest word: " + smallestWord);
+                        System.out.println("Largest word: " + largestWord);
+                
+                        scanner.close();
+                    }
+                }
+                </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7085String27.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 28: Program to find the longest repeating sequence in a string</h2>
+
+            <pre>import java.io.*;
+                import java.util.*;
+                
+                class Strings_28
+                {
+                    static int findLongestRepeatingSubSeq(String str)
+                    {
+                        int n = str.length();
+                
+                        
+                        int[][] dp = new int[n+1][n+1];
+                
+                        // Fill dp table (similar to LCS loops)
+                        for (int i=1; i<=n; i++)
+                        {
+                            for (int j=1; j<=n; j++)
+                            {
+                                
+                                if (str.charAt(i-1) == str.charAt(j-1) && i!=j)
+                                    dp[i][j] = 1 + dp[i-1][j-1];		 
+                                    
+                                
+                                else
+                                    dp[i][j] = Math.max(dp[i][j-1], dp[i-1][j]);
+                            }
+                        }
+                        return dp[n][n];
+                    }
+                    
+                    
+                    public static void main (String[] args) 
+                    {
+                        String str = "aabb";
+                        System.out.println("The length of the largest subsequence that"
+                            +" repeats itself is : "+findLongestRepeatingSubSeq(str));
+                    }
+                }</pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7095_21_Strings_28.png" alt="output">
+        </div>
+
+        <!-- <div class="program">
+            <h2>Program 29: Program to find the most repeated word in a text file</h2>
+
+            <pre></pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/" alt="output">
+        </div> -->
+
+        <div class="program">
+            <h2>Program 30: Program to find the number of the words in the given text file</h2>
+
+            <pre>class  spro3
+{
+    public static void main(String st[])
+    {
+        String str= new String( "Java is platform independent. ");
+        int c=0;
+        System.out.println("String is :"+str);
+
+       int n= str.length();
+       for(int i=0; i<n;i++)
+       {
+        char s= str.charAt(i);
+        if(s==' ')
+          {
+            c++;
+          }
+       }
+       System.out.print("No. of words in String :"+ (c));
+    }
+}
+</pre></pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7062Strings30.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 31: Program to Get a Character From the Given String</h2>
+
+            <pre>
+
+                class A { 
+                 
+                    public static char
+                    getCharFromString(String str, int index) 
+                    { 
+                        return str.charAt(index); 
+                    } 
+                
+                    
+                    public static void main(String[] args) 
+                    { 
+                        String str = "ABCDEFGH"; 
+                
+                        
+                        int index = 5; 
+                        char ch = getCharFromString(str, index); 
+                
+                        System.out.println("Character from " + str 
+                                        + " at index " + index 
+                                        + " is " + ch); 
+                    } 
+                } 
+                
+                </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7025String31.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 32: Program to Insert a string into another string</h2>
+
+            <pre>import java.lang.*; 
+                class A{ 
+                public static String insertString( String x, String y,int i) {
+                String result = new String(); 
+                for (int j = 0; j < x.length(); j++) { 
+                        result += x.charAt(j); 
+                        if (j == i){ 
+                            result += y; 
+                            } 
+                        } 
+                    return result; }
+                public static void main(String[] args){ 
+                        String x = "hellohello"; 
+                        String y = "world"; 
+                        int i = 4; 
+                        System.out.println("First string " + x); 
+                        System.out.println("Second string " + y); 
+                        System.out.println("Result "+ insertString(x,y,i)); 
+                    } 
+                } 
+                </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7105_Strings_32.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 33: Program to Iterate Over Characters in String</h2>
+
+            <pre>import java.io.*;
+                import java.util.*;
+                class Strings_33 {
+                    static void traverseString(String str)
+                    {
+                        for (int i = 0; i < str.length(); i++) {
+                 
+                            System.out.print(str.charAt(i) + " ");
+                        }
+                    }
+                 
+                    // Method 2
+                    // Main driver method
+                    public static void main(String[] args)
+                    {
+                        // Custom input string
+                        String str = "Hello world";
+                 
+                        // Calling the Method 1
+                        traverseString(str);
+                    }
+                }</pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7095_21_Strings_33.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 34: Program to Print a New Line in String</h2>
+
+            <pre>package BCA5Practical;
+                // Program to Print a New Line in String
+                public class NewLineString {
+                
+                    public static void main(String[] args) 
+                    {
+                          System.out.println("Java" + '\n' + "Programming");
+                    }
+                
+                }
+                </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7075StringP34.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 35: Program to Print even length words</h2>
+
+            <pre>class EvenLength {  
+                public static void main(String str[] ) {  
+                    String s = "This is the java even length word program ";  
+                      
+                    String[] words = s.split(" ");  
+                      
+                    for(String word : words) {  
+                        if(word.length() % 2 == 0) {  
+                            System.out.println(word);  
+                        }  
+                    }  
+                }  
+            }  </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7069string35.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 36: Program to print smallest and biggest possible palindrome word in a given string</h2>
+
+            <pre>class Strings_36 { 
+  
+                // Function to check if a 
+                // word is palindrome 
+                public static boolean checkPalin(String word) 
+                { 
+              
+                    int n = word.length(); 
+              
+                    // making the check case 
+                    // case insensitive 
+                    word = word.toLowerCase(); 
+              
+                    // loop to check palindrome 
+                    for (int i = 0; i < n; i++, n--) 
+                    { 
+                        if (word.charAt(i) != word.charAt(n - 1)) 
+                            return false; 
+                    } 
+              
+                    return true; 
+                } 
+              
+                // Determine the smallest and biggest 
+                // palindromes in a given string 
+                public static void lengthPalindrome(int temp, String words[]) 
+                { 
+                    
+                    int count = 0; 
+                    String smallest = "", longest = ""; 
+                    
+                    for (int i = 0; i < temp; i++) { 
+                        
+                        if (checkPalin(words[i])) { 
+                            count++; 
+                            
+                            // Initialize smallest and longest 
+                            // when first palindromic word 
+                            // is found 
+                            if (count == 1) 
+                                smallest = longest = words[i]; 
+              
+                            // Compare smallest and longest with each 
+                            // palindromic words 
+                            else { 
+                                
+                                // If length of smallest is greater 
+                                // than next palindromic word then 
+                                // Store that word in smallest 
+                                if (smallest.length() 
+                                    > words[i].length()) 
+                                    smallest = words[i]; 
+              
+                                // If length of longest is less 
+                                // than next palindromic word then 
+                                // Store that word in longest 
+                                if (longest.length() 
+                                    < words[i].length()) 
+                                    longest = words[i]; 
+                            } 
+                        } 
+                    } 
+              
+                    if (count == 0) 
+                        
+                        System.out.println("No palindrome found"); 
+                    
+                    else { 
+                        
+                        System.out.println("Smallest palindrome: "
+                                           + smallest); 
+                        System.out.println("Biggest palindrome: "
+                                           + longest); 
+                    } 
+                } 
+              
+                public static void main(String[] args) 
+                { 
+                    
+                    String string = "Wow Madam is driving racecar"; 
+                    String word = ""; 
+                    
+                    String[] words = new String[100]; 
+                    int temp = 0; 
+              
+                    // Add extra space after string 
+                    // to get the last word 
+                    string = string + " "; 
+              
+                    for (int i = 0; i < string.length(); i++) { 
+                        
+                        // Split the string into words 
+                        if (string.charAt(i) != ' ') { 
+                            word = word + string.charAt(i); 
+                        } 
+                        
+                        else { 
+                            
+                            // Add word to array words 
+                            words[temp] = word; 
+                            temp++; 
+                            word = ""; 
+                        } 
+                    } 
+                    
+                    System.out.println("Inputted String : " + string); 
+                    lengthPalindrome(temp, words); 
+                } 
+            }</pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7095_21_Strings_36.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 37: Program to remove all the white spaces from a string</h2>
+
+            <pre>import java.util.Scanner;
+
+                class RemoveWhiteSpace
+                {
+                public static void main(String args[])
+                {
+                System.out.println("\nProgram to remove all the white spaces from a string.\n");
+                Scanner sc= new Scanner(System.in);
+                System.out.print("Enter a String value : ");
+                String str1= sc.nextLine();
+                String result = str1.replaceAll("\\s+","");
+                System.out.println("\nOriginal String  :  "+str1);
+                System.out.println("Remove a all the WhiteSpace :  "+result);
+                }
+                }</pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7072Strings37.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 38: Program to replace lower-case characters with upper-case and vice-versa</h2>
+
+            <pre>import java.util.Scanner;
+
+                class stringvv {
+                    public static void main(String[] args) {
+                        Scanner scanner = new Scanner(System.in);
+                        System.out.print("Enter a string: ");
+                        String input = scanner.nextLine();
+                        String output = "";
+                        for (int i = 0; i < input.length(); i++) {
+                            char c = input.charAt(i);
+                            if (Character.isLowerCase(c)) {
+                                output += Character.toUpperCase(c);
+                            } else if (Character.isUpperCase(c)) {
+                                output += Character.toLowerCase(c);
+                            } else {
+                                output += c;
+                            }
+                        }
+                        System.out.println("Output: " + output);
+                    }
+                }</pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7031string38.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 39: Program to replace the spaces of a string with a specific character</h2>
+
+            <pre>class LargestInArrayExample{  
+                public static int getLargest(int[] a, int total)
+                {  
+                int temp;  
+                for (int i = 0; i < total; i++)   
+                        {  
+                            for (int j = i + 1; j < total; j++)   
+                            {  
+                                if (a[i] > a[j])   
+                                {  
+                                    temp = a[i];  
+                                    a[i] = a[j];  
+                                    a[j] = temp;  
+                                }  
+                            }  
+                        }  
+                       return a[total-1];  
+                }  
+                public static void main(String args[]){  
+                int a[]={1,2,5,6,3,2};  
+                int b[]={44,66,99,77,33,22,55};  
+                System.out.println("Largest: "+getLargest(a,6));  
+                System.out.println("Largest: "+getLargest(b,7));  
+                    }
+                  }</pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7096strings39.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 40: Program to separate the Individual Characters from a String</h2>
+
+            <pre>class SeparateCharacters {
+                public static void main(String[] args) {
+                    String inputString = "Hello, World!";
+            
+                    // Using a for loop to separate and print individual characters
+                    for (int i = 0; i < inputString.length(); i++) {
+                        char character = inputString.charAt(i);
+                        System.out.println(character);
+                    }
+                }
+            }
+            </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7006strings40.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 41: Program to Splitting into a number of sub-strings</h2>
+
+            <pre>class String41 {
+                public static void main(String[] args) {
+                    String originalString = "vishnu";
+                    int substringLength = 3;
+            
+                    
+                    int numSubstrings = (int) Math.ceil((double) originalString.length() / substringLength);
+            
+            
+                    for (int i = 0; i < numSubstrings; i++) {
+                        int start = i * substringLength;
+                        int end = Math.min((i + 1) * substringLength, originalString.length());
+            
+                        String substring = originalString.substring(start, end);
+                        System.out.println("Substring " + (i + 1) + ": " + substring);
+                    }
+                }
+            }
+            </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7025string41.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 42: Program to swap two string variables without using third or temp variable.</h2>
+
+            <pre>import java.lang.*;
+                class B {  
+                    public static void main(String[] args) {  
+                        String x = "hello", y = "world";
+                        System.out.println("Before swapping: " + x + " " + y);  
+                        x = x + y;   
+                        y = x.substring(0, (x.length() - y.length())); 
+                        x = x.substring(y.length());  
+                        System.out.println("After swapping: " + x + " " + y);  
+                    }  
+                }  </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7105_Strings_42.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 43: Program to Swapping Pair of Characters</h2>
+
+            <pre>import java.util.Scanner;
+
+                class CharacterSwapper {
+                    public static void main(String[] args) {
+                        Scanner scanner = new Scanner(System.in);
+                
+                        
+                        System.out.print("Enter a string: ");
+                        String userString = scanner.nextLine();
+                
+                        System.out.print("Enter the first character to swap: ");
+                        char charToSwap1 = scanner.next().charAt(0);
+                
+                        System.out.print("Enter the second character to swap: ");
+                        char charToSwap2 = scanner.next().charAt(0);
+                
+                        
+                        if (userString.contains(String.valueOf(charToSwap1)) && userString.contains(String.valueOf(charToSwap2))) {
+                            
+                            String resultString = swapCharacters(userString, charToSwap1, charToSwap2);
+                            System.out.println("Original string: " + userString);
+                            System.out.println("String after swapping characters: " + resultString);
+                        } else {
+                            System.out.println("Error: At least one of the characters is not present in the input string.");
+                        }
+                    }
+                
+                    private static String swapCharacters(String inputString, char char1, char char2) {
+                        StringBuilder swappedString = new StringBuilder();
+                        for (char ch : inputString.toCharArray()) {
+                            if (ch == char1) {
+                                swappedString.append(char2);
+                            } else if (ch == char2) {
+                                swappedString.append(char1);
+                            } else {
+                                swappedString.append(ch);
+                            }
+                        }
+                        return swappedString.toString();
+                    }
+                }
+                </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7085String43.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 44: Read two String user input and check if first contains second?</h2>
+
+            <pre>import java.util.*;
+                class string {
+                    
+                 public static boolean is_str_contains(String str1, String str2) {
+                    if (str1 == null || str2 == null) {
+                      throw new IllegalArgumentException("You can't pass null strings as input.");
+                    }
+                     boolean ans = false;
+                     for (int i = 0; i < str2.length() - 1; i++) {
+                       if (str2.charAt(i) == str1.charAt(0)) {
+                         for (int j = 0; j < str1.length(); j++) {
+                           if ((i + j) < str2.length() && str1.charAt(j) == str2.charAt(i + j) && j == str1.length() - 1) {
+                             ans = true;
+                             break;
+                           }
+                        }
+                      }
+                    }
+                    return ans;
+                  }
+                
+                   public static void main(String[] args) {
+                        Scanner scanner = new Scanner(System.in);
+                        System.out.print("Input first string: ");
+                        String str1 = scanner.nextLine();
+                        System.out.print("Input second string: ");
+                        String str2 = scanner.nextLine();
+                        System.out.println("If the second string contains the first one? "+is_str_contains(str1, str2));		
+                        }
+                }
+                
+                </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7086String44.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 45: Reserve String without reverse() function</h2>
+
+            <pre>class Test {
+                public static void main(String args[]) {
+            
+                    String line = "hello world how are you";
+            
+                    int count = 1;
+            
+                    for (int i = 0; i < line.length(); i++) {
+                        // System.out.println(line.charAt(i));
+            
+                        if (line.charAt(i) == ' ')
+                            count++;
+                    }
+                    System.out.println("number of word " + count);
+                }
+            }
+            </pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7077string45.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 46: Reverse String Word by Word</h2>
+
+            <pre>import java.util.Scanner;  
+                public class strings_46_7032{  
+                public static void main(String[] args)   
+                {  
+                String str;  
+                System.out.println("Enter a string: ");  
+                Scanner scanner = new Scanner(System.in);  
+                str = scanner.nextLine();  
+                scanner.close();                                //closes the input stream  
+                String reversed = reverseString(str);  
+                System.out.println("The reversed string is: " + reversed);  
+                } 
+                public static String reverseString(String s)  
+                {  
+                if (s.isEmpty())                            //checks the string if empty  
+                return s;  
+                return reverseString(s.substring(1)) + s.charAt(0);                     //recursively called function  
+                }  
+                }</pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/strings_46_7032.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 47:  Write a program to check if two Strings are created with same characters?</h2>
+
+            <pre></pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7105_Strings_47.png" alt="output">
+        </div>
+
+        <!-- <div class="program">
+            <h2>Program 48: Write a program to find out first non repeated character from input String?</h2>
+
+            <pre></pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/" alt="output">
+        </div> -->
+
+        <div class="program">
+            <h2>Program 49: Create an object StringBuffer class to reverse the string.</h2>
+
+            <pre>import java.lang.StringBuffer;
+
+                public class strings7048_49 {
+                
+                    public static void main(String[] args) {
+                        StringBuffer sb = new StringBuffer("Hello World!");
+                        System.out.println(reverse(sb));
+                    }
+                
+                    public static StringBuffer reverse(StringBuffer sb) {
+                        if (sb == null || sb.length() == 0) {
+                            return sb;
+                        }
+                        int start = 0;
+                        int end = sb.length() - 1;
+                        char temp;
+                        while (start < end) {
+                            temp = sb.charAt(start);
+                            sb.setCharAt(start, sb.charAt(end));
+                            sb.setCharAt(end, temp);
+                            start++;
+                            end--;
+                        }
+                        return sb;
+                    }
+                }</pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/strings7048_49.png" alt="output">
+        </div>
+        <div class="program">
+            <h2>Program 50: Create an object StringBuffer class to show functionality of insert, append, delete and replace functions.</h2>
+
+            <pre>/*
+                50. Create an object StringBuffer class to show functionality of insert, append, delete and replace functions. 
+            */
+            class Test
+            {
+                public static void main(String args[])
+                {
+                    StringBuffer string_buffer = new StringBuffer("write");
+            
+                    /* [ insert ] */
+            
+                    // System.out.println(new StringBuffer(" if just use ").toString());
+            
+                    string_buffer.insert(5,"\n inbuild function insert() ");
+            
+            
+                    /* [ append ] */ 
+            
+                    string_buffer.append("\n If you are like follow me at https://github.com/MayankDevil/ ");
+            
+                    // System.out.println(string_buffer.toString());
+                    
+                    /* [ replace ] */ 
+            
+                    string_buffer.replace(0,5,"wrong");
+            
+                    /* [ delete ] */
+            
+                    string_buffer.delete(5,20);
+            
+                    /* [ display ] */ 
+            
+                    System.out.println(string_buffer);
+                }
+            }
+            /*
+            
+            */</pre>
+            
+            <h2>Output:</h2>
+            <img src="strings_output/7027String50.png" alt="output">
+        </div>
+
+
+   </div>
+
+    <script src="script.js"></script>
+    </body>
+</html>
